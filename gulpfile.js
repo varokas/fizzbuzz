@@ -7,6 +7,7 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var jasmine = require('gulp-jasmine');
+var reporters = require('jasmine-reporters');
 
 var paths = {
   sass: ['./scss/**/*.scss']
@@ -54,4 +55,12 @@ gulp.task('test', function () {
     return gulp
       .src(['www/js/fizzbuzz.js', 'spec/*test.js'])
       .pipe(jasmine());
+});
+
+gulp.task('test-ci', function () {
+    return gulp
+      .src(['www/js/fizzbuzz.js', 'spec/*test.js'])
+      .pipe(jasmine({
+        reporter: new reporters.JUnitXmlReporter()   
+      }));
 });
