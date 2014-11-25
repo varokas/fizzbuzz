@@ -10,4 +10,15 @@ describe('fizzbuzz', function() {
   it('should return 1 when input is 1', function() {
     expect(f.toFizzBuzz(1)).toEqual(1);
   });
+
+  it('should return Fizz when input is 3', function() {
+    expect(f.toFizzBuzz(3)).toEqual('Fizz');
+  });
+
+  it('should return Fizz when input is 6', function() {
+    expect(f.toFizzBuzz(6)).toEqual('Fizz');
+  });
+
+
+
 });
