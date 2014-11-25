@@ -23,4 +23,11 @@ describe('fizzbuzz', function() {
     expect(f.toFizzBuzz(9)).toEqual('Fizz');
   });
 
+  it('should return Buzz when input is 5', function() {
+    expect(f.toFizzBuzz(5)).toEqual('Buzz');
+  });
+
+  it('should return FizzBuzz when input is 15', function() {
+    expect(f.toFizzBuzz(15)).toEqual('FizzBuzz');
+  });
 });
